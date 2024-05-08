@@ -1,0 +1,6 @@
+1- upload all files and images in this path (C:\xampp\htdocs ) inside htodcs create a folder and name it whatever you want
+2= download XAMPP control panel 
+3- start Apche, MySql servers from XAMPP control panel 
+4- go to any browser, then type localhost then the folder name that i mentiond in step 1 
+5- for example i saved all files in a folder called project, so i will type in the browser search: ( localhost/project )
+6- now enjoy our website! :) <3
