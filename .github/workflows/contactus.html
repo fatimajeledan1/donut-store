@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>contact us</title>
+
+<style type="text/css">
+	
+	:root {
+    --main-color: #443;
+    --border-radius: 95% 4% 97% 5% / 4% 94% 3% 95%;
+    --border-radius-hover: 4% 95% 6% 95% / 95% 4% 92% 5%;
+    --border: .2rem solid var(--main-color);
+    --border-hover: .2rem dashed var(--main-color);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    font-size: 9rem;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: .05rem var(--main-color);
+    letter-spacing: .2rem;
+    text-align: center;
+    pointer-events: none;
+    position: relative;
+}
+
+.heading span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: var(--main-color);
+    font-size: 3rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    color: var(--main-color);
+    background: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+
+/* HEADER */
+body{
+	padding-top: 110px;
+
+}
+header{
+	position: fixed;
+    top: 40px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    padding: 2rem 9%;
+}
+
+.storeLogo{
+    max-width: 8%;
+}
+
+.header .logo {
+    color: var(--main-color);
+    font-size: 2.3rem;
+    background-image: storeLogo;
+}
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+
+.header .btn {
+    margin-top: 0;
+}
+#menu-btn {
+    font-size: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+
+.book {
+    background: url(images/menu-bg.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
+
+.book form {
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+    border-radius: var(--border-radius-hover);
+    padding: 3rem;
+    border: var(--border);
+}
+
+.book form .box {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    background: none;
+    text-transform: none;
+    color: var(--main-color);
+    border: var(--border);
+    margin: .7rem 0;
+}
+
+.book form .box:focus {
+    border: var(--border-hover);
+}
+
+.book form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+
+
+</style>
+
+
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <a class="logo"></a>
+    <img class="storeLogo" src="images/donut copy.png">
+    <nav class="navbar">
+        <a href="donut-store.html">home</a>
+        <a href="donut-store.html">about us</a>
+        <a href="donut-store.html">menu</a>
+        <a href="donut-store.html">reviews</a>
+        <a href="donut-store.html">location</a>
+    </nav>
+    <a href="contactus.html" class="btn">contact us</a>
+</header>
+
+<section class="book" id="book">
+    <form name="contentform" action="contact_process.php" method="POST">
+        <h1 class="heading">message<span>leave us a message</span></h1>
+        <div class="book" id="book">
+            <label>Full Name</label>
+            <input type="text" name="name" class="box" required>
+        </div>
+        <div class="book" id="book">
+            <label>Email Address</label>
+            <input type="email" name="email" class="box" required>
+        </div>
+        <div class="book" id="book">
+            <label>Message</label>
+            <textarea name="message" placeholder="message details" class="box" cols="30" rows="10" required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <!-- JavaScript for displaying pop-up messages -->
+    <script>
+        // Get the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+
+        // Display success or error message based on the URL parameter
+        if (status === 'success') {
+            const name = urlParams.get('name');
+            alert(`Thank you, ${name}, for your message!`);
+        } else if (status === 'error') {
+            alert('Please enter a valid email address!');
+        }
+    </script>
+</section>
